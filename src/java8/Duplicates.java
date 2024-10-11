@@ -14,7 +14,12 @@ public class Duplicates {
 		Set<Integer> set = new HashSet<>();
 		List<Integer> stream = list.stream().filter(x -> !set.add(x)).toList();
 
+//		Collections.sort(stream,(a,b) -> b.compareTo(a));
+
+//		list.sort((a, b) -> b.compareTo(a));
+
 		System.out.println(stream);
+		System.out.println(list);
 
 	}
 }
