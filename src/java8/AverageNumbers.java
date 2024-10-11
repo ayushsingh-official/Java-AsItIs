@@ -12,13 +12,16 @@ public class AverageNumbers {
 
 		// method 1
 		average = list.stream().mapToDouble(i -> i).average().getAsDouble();
+		System.out.println(average);
+
 
 		// method 2
 		average = list.stream().mapToInt(i -> i).average().getAsDouble();
+		System.out.println(average);
 
-		// method 3
-		average = list.stream().reduce((a, b) -> (a + b) / 2).get();
 
+		// method 3  
+		average = list.stream().reduce((a, b) -> (a + b)).map(a -> a/list.size()).get();   
 		System.out.println(average);
 
 	}
