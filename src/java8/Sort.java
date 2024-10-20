@@ -11,7 +11,9 @@ public class Sort {
 		List<Integer> list = Arrays.asList(1, 4, 6, 3, 7, 9, 2, 5, 9, 1, 5);
 
 		List<Integer> stream = list.stream().sorted(Collections.reverseOrder()).toList();
-		
+
+//		List<Integer> stream = list.stream().sorted((a, b) -> Integer.compare(b, a)).toList();
+
 		System.out.println(stream);
 
 	}

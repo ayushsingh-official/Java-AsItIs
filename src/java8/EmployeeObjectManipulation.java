@@ -8,7 +8,7 @@ import java.util.stream.Collectors;
 
 import practice.Employee;
 
-public class EmployeeToMap {
+public class EmployeeObjectManipulation {
 
 	public static void main(String[] args) {
 
@@ -16,6 +16,7 @@ public class EmployeeToMap {
 
 		createEmployee(list);
 
+		// List of Employee to Map (Key - Value)
 		Map<Integer, String> map = list.stream()
 				.collect(Collectors.toMap((employee) -> employee.age, (employee) -> employee.name));
 
@@ -23,6 +24,15 @@ public class EmployeeToMap {
 			System.out.print(entry.getKey() + " ");
 			System.out.println(entry.getValue());
 		}
+
+		// Max/Min age sort Employee.
+		list.stream().sorted((b, a) -> Integer.compare(b.getAge(), a.age))
+				.peek(value -> System.out.println("Sorted Name : " + value.getName())).toList()
+				.forEach(ans -> System.out.println("Final Answer : " + ans.getName()));
+		;
+
+//		System.out.println("min : " + sortedListReverse.get(0).getName());
+//		System.out.println("max : " + sortedListReverse.get(sortedListReverse.size() - 1).getName());
 
 	}
 
